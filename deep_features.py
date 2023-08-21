@@ -84,9 +84,10 @@ class DeepFeatures(torch.nn.Module):
             (bool) : True if writing was succesful
         
         '''
-        
-        assert len(os.listdir(self.imgs_folder))==0, "Images folder must be empty"
-        assert len(os.listdir(self.embs_folder))==0, "Embeddings folder must be empty"
+        print("Writing embeddings to " + self.embs_folder)
+        print("Writing images to " + self.imgs_folder, len(os.listdir(self.imgs_folder)))
+        # assert len(os.listdir(self.imgs_folder))==0, "Images folder must be empty"
+        # assert len(os.listdir(self.embs_folder))==0, "Embeddings folder must be empty"
         
         # Generate embeddings
         embs = self.generate_embeddings(x)
